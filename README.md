@@ -38,6 +38,7 @@ Prior to JDK 1.6 there was no tool available that would allow you to insert a pr
 ### Help
 ```
 ./bin/KeyStoreImport.bash -h
+
 This application will import a private key and it's associated X509 certificate chain into the target keystore file in Java JKS format.  The following are the required options:
 
 -keystore=<path-to-key-store> The full path to the target JKS file
