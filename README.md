@@ -1,7 +1,20 @@
 # KeyStoreImport
 Prior to JDK 1.6 there was no tool available that would allow you to insert a private key into a Java Keystore file (JKS).  The code contained in this repository was written to provide that functionality.
-## Building
-
+## Download and Build the Source
+* Minimum requirements:
+    * Java Development Kit (v1.8.0 or higher)
+    * GIT (v1.7 or higher)
+    * Maven (v3.3 or higher)
+* Download source
+```
+# cd /var/local
+# git clone https://github.com/carpenlc/KeyStoreImport.git
+```
+* Build the source
+```
+# cd KeyStoreImport
+# mvn clean package install
+```
 ## Usage
 If you want to include the entire certificate chain, concatenate the certificates in a single PEM-formatted file ordered from root to leaf certificate.  This is not required.  You can simply insert the certificate file.
 ```
