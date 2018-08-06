@@ -97,17 +97,16 @@ public class KeyStoreImport {
 		// Set up the command line options
 		Options opt = new Options(args, 0);
 		opt.getSet().addOption("keystore", Separator.EQUALS, 
-				Multiplicity.ONCE);
+				Multiplicity.ZERO_OR_ONE);
 		opt.getSet().addOption("certs", Separator.EQUALS, 
-				Multiplicity.ONCE);
+				Multiplicity.ZERO_OR_ONE);
 		opt.getSet().addOption("key", Separator.EQUALS, 
-				Multiplicity.ONCE);
+				Multiplicity.ZERO_OR_ONE);
 		opt.getSet().addOption("alias", Separator.EQUALS, 
-				Multiplicity.ONCE);
-		opt.getSet().addOption("h", Separator.EQUALS, 
-				Multiplicity.ZERO_OR_MORE);
-		opt.getSet().addOption("help", Separator.EQUALS, 
-				Multiplicity.ZERO_OR_MORE);
+				Multiplicity.ZERO_OR_ONE);
+		
+		opt.getSet().addOption("h", Multiplicity.ZERO_OR_MORE);
+		opt.getSet().addOption("help", Multiplicity.ZERO_OR_MORE);
 		
 		// Make sure the options make sense
 		if (!opt.check(true, false)) {
@@ -122,7 +121,7 @@ public class KeyStoreImport {
 			System.out.println(KeyStoreImport.USAGE_STRING);
 			System.exit(0);
 		}
-	
+
 		// Retrieve the command line parameters
 		if (opt.getSet().isSet("keystore") && opt.getSet().isSet("certs") && 
 				opt.getSet().isSet("key") && opt.getSet().isSet("alias")) {

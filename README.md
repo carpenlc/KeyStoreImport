@@ -35,5 +35,19 @@ Prior to JDK 1.6 there was no tool available that would allow you to insert a pr
     -alias=certificate.name
 ```
 
+### Help
+```
+./bin/KeyStoreImport.bash -h
+This application will import a private key and it's associated X509 certificate chain into the target keystore file in Java JKS format.  The following are the required options:
+
+-keystore=<path-to-key-store> The full path to the target JKS file
+-certs=<path-to-cert-file>    The full path to the file containing the certificate chain (PEM encoded)
+-key=<path-to-key-File>       The full path to the file containing the RSA private key (DER encoded PKCS#8 format)
+-alias=<cert-alias>           The certificate alias
+
+
+
+Usage: java KeyStoreImport -keystore=<path-to-key-store> -certs=<path-to-cert-file> -key=<path-to-key-File> -alias=<cert-alias> [-h] [-help]
+```
 ### Notes
 * Some applications do not correctly handle the full certificate chain.  For example JBoss EAP (6.4 and below) will give clients a sec_error_pkcs11_device_error.  
