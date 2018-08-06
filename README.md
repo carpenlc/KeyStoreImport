@@ -34,3 +34,5 @@ Prior to JDK 1.6 there was no tool available that would allow you to insert a pr
     -key= private.p8 \
     -alias=certificate.name
 ```
+*Notes
+Some applications do not correctly handle the full certificate chain.  For example JBoss EAP (6.4 and below) will give clients a sec_error_pkcs11_device_error.  
