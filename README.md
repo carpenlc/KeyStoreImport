@@ -27,7 +27,7 @@ Prior to JDK 1.6 there was no tool available that would allow you to insert a pr
 * To insert the certificate chain, and private key into a new keystore execute the following
 ```
 # keytool -genkey -alias foo -keystore keystore.jks
-# keytool -delete -alias foo
+# keytool -delete -alias foo -keystore keystore.jks
 # /var/local/KeyStoreImport/bin/KeyStoreImport.bash \
     -keystore=keystore.jks \
     -certs=chain.pem  \
